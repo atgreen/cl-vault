@@ -30,7 +30,6 @@
 		   (drakma:http-request url :additional-headers (list (cons "X-Vault-Token" token)))
 		 (case response-code
 		   (200 (flexi-streams:octets-to-string body))
-		   (t (error "http response code ~A fetching secrets from ~A" response-code url))))
+		   (t (error "http response code ~A" response-code))))
 	     (error (condition)
 	       (error "error fetching secrets from ~A: ~A" url condition)))))))
-
