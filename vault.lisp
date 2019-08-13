@@ -34,4 +34,4 @@
 		   (200 (flexi-streams:octets-to-string body))
 		   (t (error "http response code ~A" response-code))))
 	     (error (condition)
-	       (error "error fetching secrets from ~A: ~A" url condition)))))))
+	       (error "error fetching secrets from '~A': ~A" url condition)))))))
