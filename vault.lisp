@@ -18,6 +18,8 @@
 
 ;; Top level for cl-vault
 
+(in-package :cl-vault)
+
 (defun fetch-vault-secrets (url token)
   "Return an alist of secrets from hashicorp vault at URL using TOKEN"
   (check-type url (and string (not null)))

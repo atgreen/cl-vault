@@ -4,12 +4,16 @@
 > Simple Common Lisp convenience functions for accessing hashicorp vault.
 
 cl-vault currently consists of a single convenience function for
-extracting secrets from [hashicorp vault](https://www.vaultproject.io/): FETCH-VAULT-SECRETS.  Use it
+extracting secrets from [hashicorp vault](https://www.vaultproject.io/): `FETCH-VAULT-SECRETS`.  Use it
 like so:
 
-`(fetch-vault-secret "https://vault.example.com/v1/secret/my-secret" "my-token"))`
+    * (cl-vault:fetch-vault-secrets "https://vault.example.com:8200/v1/secret/my-secret"
+                                    "mytoken0-0000-0000-0000-000000000000")
+    ((:+MY-USERNAME+ . "myusername")
+     (:+MY-PASSWORD+ . "Bond007"))
 
-FETCH-VAULT-SECRET returns an alist of [cl-json](https://common-lisp.net/project/cl-json/cl-json.html) parsed secrets.
+
+`FETCH-VAULT-SECRETS` returns an alist of [cl-json](https://common-lisp.net/project/cl-json/cl-json.html) parsed secrets.
 
 Author and License
 -------------------
